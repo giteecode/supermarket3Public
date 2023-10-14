@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShangpinweihuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShangpinweihuEntity" id="shangpinweihuMap">
+        <result property="gonghao" column="gonghao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shangpinbianhao" column="shangpinbianhao"/>
+        <result property="shangpinmingcheng" column="shangpinmingcheng"/>
+        <result property="shangpinleixing" column="shangpinleixing"/>
+        <result property="weihuzhuangtai" column="weihuzhuangtai"/>
+        <result property="dengjishijian" column="dengjishijian"/>
+        <result property="weihushuoming" column="weihushuoming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShangpinweihuVO" >
+		SELECT * FROM shangpinweihu  shangpinweihu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShangpinweihuVO" >
+		SELECT  shangpinweihu.* FROM shangpinweihu  shangpinweihu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShangpinweihuView" >
+
+		SELECT  shangpinweihu.* FROM shangpinweihu  shangpinweihu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShangpinweihuView" >
+		SELECT * FROM shangpinweihu  shangpinweihu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
